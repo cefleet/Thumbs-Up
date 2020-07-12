@@ -14,9 +14,9 @@
   },
   "scripts": {
     "dev": "npm run socket-dev & npm run app-dev",
-    "start": "",
-    "socket-dev": "nodemon socket.js",
-    "app-dev": "nodemon app.js",
+    "start": "node app.js",
+    "socket-dev": "nodemon app.js",
+    "app-dev": "nodemon dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
