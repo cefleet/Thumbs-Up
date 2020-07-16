@@ -41,7 +41,7 @@ export default (parent, empty = true)=>{
     })
 
     let name = document.querySelector('#name');
-    name.setAttribute('value', nameValue);
+    name.setAttribute('value', nameValue || "");
 
     name.addEventListener('input', (evt)=>{
         localStorage.setItem('name', evt.target.value);

@@ -27,6 +27,8 @@ input {
 ul {
     padding:0;
     margin:0;
+    display: flex;
+    flex-wrap:wrap;
 }
 
 button {
@@ -58,7 +60,6 @@ button {
 
 .results {
     width:100%;
-    max-width:400px;
 }
 
 .status-name {
@@ -78,9 +79,8 @@ button {
     margin:10px;
     justify-content: flex-start;
     overflow:hidden;
-    width:100%;
     width:-webkit-fill-available;
-
+    max-width:400px;
 }
 
 .user-name {
