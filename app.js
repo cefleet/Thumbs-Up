@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 const newConnection = require("./modules/new-connection");
 
-const wss = new WebSocket.Server({ port: 3001 });
+const wss = new WebSocket.Server({ port: 8081 });
 
 wss.on('connection', newConnection);
 
