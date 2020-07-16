@@ -1,18 +1,70 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    padding:0;
+    margin:0;
+}
+
+
+input {
+    padding:6px 0 6px 6px;
+    margin-right:8px;
+    border-radius: 6px;
+    border:1px solid #333;
+    font-size:1.2em;
+    max-width:478px;
+    margin:6px;
+    display: block;
+    width:-webkit-fill-available;
+}
+
+.input-container {
+    width:100%;
+    padding:0;
+    margin:0;
+    max-width:500px;
+}
+
+ul {
+    padding:0;
+    margin:0;
+}
+
+button {
+    padding:6px;
+    border-radius: 6px;
+    font-size:1.2em;
+    margin:4px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    border-top:1px solid;
 }
 
 .actions {
     display: flex;
+    
 }
 .action-icon {
-    max-width:200px;
-    max-height:200px;
+    max-width:100px;
+    max-height:100px;
 }
 
 .action-icon svg {
     width:100%;
     height:100%;
+}
+
+.results {
+    width:100%;
+    max-width:400px;
+}
+
+.status-name {
+    width:100%;
+    display:flex;
+    align-items:center;
 }
 
 .user-status {
@@ -24,8 +76,11 @@ body {
     border-radius: 3px;
     box-shadow: 4px 4px 4px #333;
     margin:10px;
-    max-width:400px;
     justify-content: flex-start;
+    overflow:hidden;
+    width:100%;
+    width:-webkit-fill-available;
+
 }
 
 .user-name {
@@ -33,11 +88,15 @@ body {
     margin:4px;
     font-weight: bold;
     text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width:310px;
 }
 
 .small-icon {
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     background-color: chartreuse;
     margin:4px;
     border-radius: 50%
