@@ -19,7 +19,7 @@ export default (parent, empty = true)=>{
         cont.innerHTML = "";
         let users = msg.message.sort((a,b)=>a.name - b.name)
         cont.innerHTML = users.filter(u=>u.id != getUserId()).map(u=>`
-        <div class="user-status" id='${u.id}'>
+        <div class="user-status ${u.connected ? 'connected' : 'disconnected'}" id='${u.id}' >
             <div class="status-name">
                 <div class="small-icon">${getIcon(u.status)}</div>
                 <div class="user-name">${u.name}</div>

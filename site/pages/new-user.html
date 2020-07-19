@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+</head>
+    <body>
+        <div style="font-weight:bold;color:red;border:2px solid; padding:4px; text-align: center;">THIS IS NOT SECURE. FOR TESTING ONLY RIGHT NOW. <br />THE PASSWORDS ARE STORED IN PLAIN TEXT IN MEMORY. DO NOT USE A PASSWORD THAT YOU USE ANYWHERE ELSE</div>
+        <form action="/register" method="POST">
+            <div>
+                <label>
+                    Username
+                    <input name="username" id="username"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Display Name
+                    <input name="name" id="name"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    password
+                    <input name="password" id="password" type="password" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    confirm password
+                    <input name="password-confirm" id="password-confirm" type="password" />
+                </label>
+            </div>
+            <button type="submit" id="register-button">Register</button>
+        </form>
+        <script src="./src/register.js" type="module"></script>
+    </body>
+</html>

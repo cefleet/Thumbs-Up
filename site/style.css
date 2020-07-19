@@ -72,15 +72,25 @@ button {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background-color: darkgrey;
     border: 1px solid;
     border-radius: 3px;
-    box-shadow: 4px 4px 4px #333;
+    ;
     margin:10px;
     justify-content: flex-start;
     overflow:hidden;
     width:-webkit-fill-available;
     max-width:400px;
+}
+
+.user-status.connected {
+    background-color: darkgrey;
+    box-shadow: 4px 4px 6px #a0e7a6;
+}
+
+.user-status.disconnected {
+    color:rgb(98, 98, 98);
+    background-color:#ddd;
+    box-shadow: 4px 4px 6px #333;
 }
 
 .user-name {
@@ -100,6 +110,11 @@ button {
     background-color: chartreuse;
     margin:4px;
     border-radius: 50%
+}
+
+.user-status.disconnected .small-icon {
+    background-color:#708559;
+
 }
 
 .small-icon svg {

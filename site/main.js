@@ -1,6 +1,15 @@
-import userPage from "./src/userPage.js";
+import userComponent from "./src/userComponent.js";
+import {addListener, openSocket} from "./src/websocket.js";
+import {fetchUserInfo, setUserId} from "./src/userManager.js";
 
-import {addListener} from "./src/websocket.js";
 document.querySelector("#container").innerHTML = "loading..."
 
-addListener('user-set', ()=>userPage(document.querySelector("#container")));
+const start = async () =>{
+    let user = await fetchUserInfo();
+    setUserId(user.id);
+
+    openSocket()    
+    addListener('user-set', ()=>userComponent(document.querySelector("#container")));
+}
+
+start()

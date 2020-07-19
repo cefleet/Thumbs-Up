@@ -1,5 +1,6 @@
-const {addItemToList, removeItemFromList} = require("./data-store");
+const {findItemFromList, addItemToList, removeItemFromList, updateItemFromList} = require("./data-store");
 const sendMessage = require("./send-message");
+const sendAllActions = require("./send-all-actions");
 const recieveMessage = require("./recieve-message");
 
 const newConnection = (_ws) =>{
@@ -10,7 +11,10 @@ const newConnection = (_ws) =>{
     sendMessage('connected', {socket_id:ws.id}, ws.id);
 
     ws.socket.on('close', ()=>{
-       removeItemFromList(ws.id, 'openSockets')
+        let updated_ws = findItemFromList(ws.id, 'openSockets');
+        updateItemFromList({socket:null},updated_ws.userId, 'users');//removes socket from user
+        removeItemFromList(ws.id, 'openSockets');
+        sendAllActions(updated_ws.userId);//tells everybody that they are no longer connected
     })
 }
 

@@ -1,11 +1,9 @@
-import uuid from "./uuid.js"
-let userId = localStorage.getItem('userId') || uuid()
-localStorage.setItem('userId', userId);
+let userId = null;
 
 export const getUserId = ()=>userId;
 
-export const setUserId = (newUserId) => {
-    localStorage.setItem('userId', userId)
-    userId = newUserId;
-    return userId;
-}
+export const setUserId = (id) =>userId = id;
+
+
+export const fetchUserInfo = () =>fetch("/get-my-user-info").then(resp=>resp.json())
+    

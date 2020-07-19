@@ -2,8 +2,8 @@ const { v4: uuidv4 } = require('uuid');
 
 let store = {
     openSockets:[],
-    users:[],
-    classRooms:[]
+    users:[{username:"cefleet",password:'sss',name:"clint",status:null, message:"",socket:null, id:'1234-5678-91011',admin:true, room:"1"},{username:"sss",name:"sss",password:'sss', status:null, message:"",socket:null, id:'1234-5678-91012', 'room':"1"}],
+    rooms:[{id:"1", name:"Main", selfAdd:true, public:true, owner:null }, {id:"2", name:"Clints", selfAdd:true, public:true, owner:'1234-5678-91011'}]
 }
 
 const getList = (list) =>{
@@ -29,6 +29,10 @@ const findItemFromList = (id, list) =>{
     return store[list].find(s=>s.id === id)
 }
 
+const findAllItemFromListByAttribute = (attrib, attribValue, list)=>{
+    return store[list].filter(item=>item[attrib] === attribValue);
+}
+
 const findItemFromListByAttribute = (attrib, attribValue, list)=>{
     return store[list].find(item=>item[attrib] === attribValue);
 }
@@ -46,5 +50,6 @@ module.exports = {
     removeItemFromList,
     findItemFromList,
     updateItemFromList,
-    findItemFromListByAttribute
+    findItemFromListByAttribute,
+    findAllItemFromListByAttribute
 }
